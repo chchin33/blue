@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "fastpages 정리",
-            "content": "1. fastpage&#51032; _notebooks &#50640; &#50612;&#46500;&#44148; &#54252;&#49828;&#53944;&#44032; &#50732;&#46972;&#44032;&#44256; &#50612;&#46500;&#44148; &#50504;&#50732;&#46972;&#44032;&#45716; &#54788;&#49345;&#51060; &#51080;&#50632;&#51020; . 원인: 제목에 colon이 있었던 것, DeepHIT: a deep learning framework for prediction of hERG-induced cardiotoxicity (개인 정리용) 에서 :를 빼고 ,로 바꾸니까 포스터가 올라가짐. . 그 외의 경우에 대해선 다음 글 참조: https://github.com/fastai/fastpages/blob/master/_fastpages_docs/TROUBLESHOOTING.md | .",
+            "content": "1. fastpage&#51032; _notebooks &#50640; &#50612;&#46500;&#44148; &#54252;&#49828;&#53944;&#44032; &#50732;&#46972;&#44032;&#44256; &#50612;&#46500;&#44148; &#50504;&#50732;&#46972;&#44032;&#45716; &#54788;&#49345;&#51060; &#51080;&#50632;&#51020; . 원인: 제목에 colon이 있었던 것, DeepHIT: a deep learning framework for prediction of hERG-induced cardiotoxicity (개인 정리용) 에서 :를 빼고 ,로 바꾸니까 포스터가 올라가짐. . 참고한 블로그: https://github.com/fastai/fastpages/blob/master/_fastpages_docs/TROUBLESHOOTING.md | .",
             "url": "https://chchin33.github.io/blue/personal%20study/2022/07/12/fastpages.html",
             "relUrl": "/personal%20study/2022/07/12/fastpages.html",
             "date": " • Jul 12, 2022"
