@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "fastpages 정리",
+            "content": "1. fastpage&#51032; _notebooks &#50640; &#50612;&#46500;&#44148; &#54252;&#49828;&#53944;&#44032; &#50732;&#46972;&#44032;&#44256; &#50612;&#46500;&#44148; &#50504;&#50732;&#46972;&#44032;&#45716; &#54788;&#49345;&#51060; &#51080;&#50632;&#51020; . 원인: 제목에 colon이 있었던 것, DeepHIT: a deep learning framework for prediction of hERG-induced cardiotoxicity (개인 정리용) 에서 :를 빼고 ,로 바꾸니까 포스터가 올라가짐. . 그 외의 경우에 대해선 다음 글 참조: https://github.com/fastai/fastpages/blob/master/_fastpages_docs/TROUBLESHOOTING.md | .",
+            "url": "https://chchin33.github.io/blue/personal%20study/2022/07/12/fastpages.html",
+            "relUrl": "/personal%20study/2022/07/12/fastpages.html",
+            "date": " • Jul 12, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "DeepHIT, a deep learning framework for prediction of hERG-induced cardiotoxicity (개인 정리용)",
             "content": "Intro . - hERG란? . hERG 유전자는 심근세포의 잠재적인 재분극에 중요한 역할을 한다. 그런데 Drug discovery에서 왜 갑자기 hERG 심장관련 얘기가 나왔는가?라고 하면, 신약 개발 과정에서 있어서 약이 될만한 물질이 독성이 있는지 없는지를 파악하는 것은 중요한 문제이다. 우리는 여러 독성중에서도 심장 독성(Cardiotoxicity)역시 따져야하기 때문에, 이와 관련된 hERG를 따져봐야 한다. . 다시 hERG로 돌아와서, 먼저 hERG channel(자세한 의미는 잘 모른다. 일단 심장활동에 직접적인 연관이 있는 정도로 파악중...)라는 것이 있는데, 만약 이것의 기능이 저하되면 QT interval(심장박동을 평가하는 항목 중 하나)이 길어져서 부정맥과 같은 여러 심장병을 유발할 수 있다. 이게 그냥 넘길만한 issue가 아닌 것이, 실제로 시장에 내놓기까지 했는데 심장독성으로 인하여 다시 시장에서 제외된 약들이 있다. (astemizole, terfenadine와 cisapride 가 예이다.) . - The problem of traditional experiments for hERG inhibitor . 보통 이러한 독성검사는 신약개발의 후반부(비임상 실험)에 진행된다(drug discovery 글의 Figure 참고). 만약 여태까지 후보물질 다 찾아내고 후반부의 독성평가에서 문제가 발생한다면? 여태 약 후보물질을 찾기위해 해왔던 과정 + 독성평가를 위해 해왔던 실험들이 상당한 낭비가 될 것이다. 여기서 Compuational한 방법을 적용하면 개발 초기에 prediction을 하거나 분석을 하여 앞서 말한 상황을 방지할 수 있다. 뿐만 아니라 독성시험 자체 과정도 수많은 분자에 대해서 실험적으로 진행하게 되는데, 이러한 실험적 수고를 어느정도 덜게 된다. . - Computational methods . Computational한 방법으로는 Random forest(Rf). Support Vector Machine(SVM), Deep Neural Network(DNN), Graph Neural Network(GNN)등이 있다. 이러한 Computational 방법들은 데이터를 기반으로 진행되므로, 데이터가 매우 중요하다고 할 수 있다. 이러한 데이터들도 기술을 발전으로 인해, 다양하고 큰 스케일의 hERG blocker과 hERG non-blocker들을 public하게 이용가능한 데이터들이 많이 나왔다. . - Performacne of Computational methods . 앞서 Computational methods로 예측을 한다고 했다. 그러면 이 방법이 좋은 방법인지 아닌지는 어떻게 판단할까? 당연히 잘 맞출수록 좋은 모델이라고 할 수 있다.(이를 accuracy라 한다.) . 하지만, 맞추는 개수가 좋다고 꼭 좋은 모델은 아니다. 이건 상황을 잘 따져가면서 정확도에 대한 정의를 잘 해야하는데, 예를 들어 이런 상황을 생각해보자 Negative의 개수가 99개이고 positive의 개수가 1개인 데이터에 대해서, Computational model이 무조건 Negative로만 예측하면 정확률 99%를 달성할 수 있다. 하지만 이것을 좋은 모델이라 할 수 있는가? 이럴 때 Sensitivity라는 측정법을 사용하면 성능이 형편없게 나온다. 그래서 다양한 측정법들 (이를 metric이라 한다)을 상황에 맞게 사용하여아 한다. . 이번 논문에서는 Accuracy, area under the receiver operating characteristic(AUROC), Matthews correlation coefficient(MCC), sensitivity, specifity, negative predictive value(NPV), positive predictive value(PPV) 등등을 소개한다. . 여기 TP, FP, TN, FN 그림 | .",
             "url": "https://chchin33.github.io/blue/2022/07/11/DeepHIT(Personal).html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Drug discovery (개인 정리용)",
             "content": "drug discovery and development . - 갈수록 신약 개발 비용이 exponential하게 증가하고 있다는 문제가 있는데, 이는: . 병의 원인이 되는 단백질 (타겟 단백질) 탐색(target identification) | 타겟 단백질에 유효한 효과를 내는 화합물 탐색(hit-identification) | 이 화합물의 효과가 더 좋아지도록 구조를 변형(lead-optimization) | etc... $ hspace{0cm}$과 같은 과정에서 비롯됨. 이렇게 신약을 만드는데 걸리는 시간, 비용이 대략 26억 달러 그리고 13.5년 정도... | . | . - 결국 신약개발에 있어서 중요한 문제는 개발 시간과 비용을 줄이는 것임 . 제약 산업은 특히 신약 개발에서, drug discovery 과정에 많은 돈을 쓰고있음 | . 즉, drug discovery 부분에서 개선시킬 여지가 있다는 것을 의미 . . 출처: https://brunch.co.kr/@@TBQ/19 . AI application into drug discovery . 기존 신약 개발 문제: 실험으로 모든 가능한 화합물들을 만들고 확인하는건 사실상 불가능하다 보니, 지식 기반으로 사람이 처리하다보면 drug discovery 과정에서 심한 편향이 발생할 수밖에 없음 . 이 문제를 해결할 방법이 없을까? . - AI를 통해 이 문제에 접근해 볼 수 있음 . 실제 drug discovery를 위해 성능좋은 AI 기반 decision maker를 개발한 사람들이 많이 있음 | 최신 AI 기술과 drug discovery에서의 빅 데이터를 이용할 수 있는데, 이를 통해서 어떤 효과를 기대해볼 수 있을까? 인간이 발견하기 힘든 데이터 기반 패턴 발견 $ rightarrow$ 위에서 말한 편향문제가 어느정도 해결될거임. | 빠르고 정확한 예측 모델을 가지고 화합물들을 빠르게 탐색 가능. $ rightarrow$ 이는 위에서 말한 시간과 비용 절감 목적에 부합함. | AI 모델로 후보 물질 구조를 새롭게 만들고 평가 가능. | 특정 병을 위한 시장에 나온 약이 다른 병에 적용가능한지 AI가 판단하는 것$ rightarrow$ 일단 시장에 나온 시점에서 신약개발의 까다로운 과정들은 다 통과했다는 것을 의미하니까 이것도 상당한 비용절감을 기대해볼 수 있음. | . | . 그 외 내용들 . 논문에 소개된 AI 적용 drug discovery 영역으로는, . AI-guided Target Identification | AI-guided Hit Identification | ADMET Prediction | Lead Optimization | Drug Repositioning | . 이 있었음 . 내용 출처: Artificial Intelligence in Drug Discovery: A Comprehensive Review of Data-driven and Machine Learning Approaches의 인트로 .",
             "url": "https://chchin33.github.io/blue/2022/06/30/Drug_discovery(Personal).html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "An Example Markdown Post",
             "content": "Example Markdown Post . Basic setup . Jekyll requires blog post files to be named according to the following format: . YEAR-MONTH-DAY-filename.md . Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and filename is whatever file name you choose, to remind yourself what this post is about. .md is the file extension for markdown files. . The first line of the file should start with a single hash character, then a space, then your title. This is how you create a “level 1 heading” in markdown. Then you can create level 2, 3, etc headings as you wish but repeating the hash character, such as you see in the line ## File names above. . Basic formatting . You can use italics, bold, code font text, and create links. Here’s a footnote 1. Here’s a horizontal rule: . . Lists . Here’s a list: . item 1 | item 2 | . And a numbered list: . item 1 | item 2 | Boxes and stuff . This is a quotation . . You can include alert boxes …and… . . You can include info boxes Images . . Code . You can format text and code per usual . General preformatted text: . # Do a thing do_thing() . Python code and output: . # Prints &#39;2&#39; print(1+1) . 2 . Formatting text as shell commands: . echo &quot;hello world&quot; ./some_script.sh --option &quot;value&quot; wget https://example.com/cat_photo1.png . Formatting text as YAML: . key: value - another_key: &quot;another value&quot; . Tables . Column 1 Column 2 . A thing | Another thing | . Tweetcards . Altair 4.0 is released! https://t.co/PCyrIOTcvvTry it with: pip install -U altairThe full list of changes is at https://t.co/roXmzcsT58 ...read on for some highlights. pic.twitter.com/vWJ0ZveKbZ . &mdash; Jake VanderPlas (@jakevdp) December 11, 2019 Footnotes . This is the footnote. &#8617; . |",
             "url": "https://chchin33.github.io/blue/markdown/2020/01/14/test-markdown-post.html",
